@@ -1,0 +1,149 @@
+@font-face {
+  font-family: norse-bold;
+  src: url(./fonts/Norse-Bold.otf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(250, 250, 250);
+}
+
+/* LEFT SIDE STYLES */
+img {
+  height: 12vh;
+  width: auto;
+}
+
+.leftContainer {
+  background-image: url(./images/waterfall.jpg);
+  background-color: rgb(77, 95, 72);
+  min-width: 35%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.odinlogo {
+  margin-top: 25vh;
+  height: 15vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.556);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: norse-bold;
+  font-size: 7rem;
+}
+
+/* RIGHT SIZE STYLES */
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 3vh;
+    margin-top: 20vh;
+    min-width: 100%;
+}
+
+h1, h2, h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    line-break: strict;
+    width: 56rem;
+    margin-top: 1.5rem;
+}
+
+.formContainer{
+    margin-left: -3vh;
+    margin-top: 4vh;
+    height: 24vh;
+    min-width: 100%;
+    background-color: rgb(254, 254, 254);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.143), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+/* FORM STYLES */
+form, h3 {
+    margin-top: 2vh;
+    margin-left: 3vh;
+    width: 20vh;
+}
+
+label{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+input {
+    width: 18rem;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+.row {
+    margin-top: 1.5vh;
+    gap: 10vh;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.leftInputs, .rightInputs {
+    display: block;
+}
+
+
+/* FOOTER STYLES */
+
+button.submitBtn {
+    transition: 0s;
+    margin-top: 3vh;
+    height: 4rem;
+    width: 17rem;
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgb(77, 95, 72);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.143), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button.submitBtn:hover {
+    transition: 0.3s;
+    color: rgb(77, 95, 72);
+    background-color: aliceblue;
+    height: 4.1rem;
+    width: 17.1rem;
+}
+
+button.submitBtn:active {
+    background-color: rgb(77, 95, 72);
+    color: aliceblue;
+}
+
+p {
+    margin-top: 3vh;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+a {
+    color: rgb(77, 95, 72);
+    font-weight: 700;
+    text-decoration: none;
+}

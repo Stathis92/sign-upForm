@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="leftContainer">
+      <div class="odinlogo"><img src="./images/odin-lined.png">ODIN</div>
+    </div>
+    <div class="rightContainer">
+      <h2>
+        This is not a real online service! You know you need something like
+        this in your life to help you realize your deepest dreams. Sign up
+        <em>now</em> to get started.
+      </h2> <h1>You <em>know</em> you want to.</h1>
+      <div class="formContainer">
+        <h3>
+          Let's do this!
+        </h3>
+        <form>
+          <div class="row">
+            <div class="leftInputs">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" />
+            </div>
+            <div class="rightInputs">
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="leftInputs">
+              <label for="user_email">Email</label>
+              <input type="email" id="user_email" />
+            </div>
+            <div class="rightInputs">
+              <label for="phone_number">Phone Number</label>
+              <input type="tel" id="phone_number" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="leftInputs">
+              <label for="user_password">Password</label>
+              <input type="password" id="user_password" />
+            </div>
+            <div class="rightInputs">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="password" id="confirm_password" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <button class="submitBtn">Create Account</button>
+      <p>Already have an account? <a href="">Log in</a></p>
+    </div>
+  </body>
 </html>
