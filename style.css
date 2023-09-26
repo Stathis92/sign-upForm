@@ -27,7 +27,8 @@ img {
 .leftContainer {
   background-image: url(./images/waterfall.jpg);
   background-color: rgb(77, 95, 72);
-  min-width: 35%;
+  width: 35%;
+  float: left;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -38,7 +39,7 @@ img {
   height: 15vh;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.556);
-  color: aliceblue;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,14 +48,14 @@ img {
 }
 
 /* RIGHT SIZE STYLES */
-
 .rightContainer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 3vh;
     margin-top: 20vh;
-    min-width: 100%;
+    width: 65%;
+    float: left;
 }
 
 h1, h2, h3 {
@@ -66,14 +67,13 @@ h1, h2, h3 {
 }
 
 .formContainer{
-    margin-left: -3vh;
-    margin-top: 4vh;
-    height: 24vh;
-    min-width: 100%;
+    margin-left: 0.25vh;
+    margin-top: 5vh;
+    min-height: 320px;
+    width: 740px;
     background-color: rgb(254, 254, 254);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.143), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 /* FORM STYLES */
 form, h3 {
@@ -90,9 +90,17 @@ label{
 }
 
 input {
-    width: 18rem;
+    width: 16rem;
     height: 2rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    border: 2px solid #E5E7EB;
+    transition: 0.5s;
+    outline: none;
+}
+
+input:focus {
+    transition: 0.1;
+    border: 2px solid #425fe2;
 }
 
 .row {
@@ -111,11 +119,11 @@ input {
 /* FOOTER STYLES */
 
 button.submitBtn {
-    transition: 0s;
+    transition: 0.3s;
     margin-top: 3vh;
     height: 4rem;
     width: 17rem;
-    color: aliceblue;
+    color: white;
     font-size: 1.2rem;
     font-weight: 600;
     background-color: rgb(77, 95, 72);
@@ -126,14 +134,12 @@ button.submitBtn {
 button.submitBtn:hover {
     transition: 0.3s;
     color: rgb(77, 95, 72);
-    background-color: aliceblue;
-    height: 4.1rem;
-    width: 17.1rem;
+    background-color: white;
 }
 
 button.submitBtn:active {
     background-color: rgb(77, 95, 72);
-    color: aliceblue;
+    color: white;
 }
 
 p {
