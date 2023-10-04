@@ -6,10 +6,10 @@ let errorCount = 0;
 
 function createAccount() {
   errorCount = 0;
+  console.clear();
   checkInputs();
   if (errorCount == 0) {
     submitInfo();
-    alert("Account created successfully.");
   }
 }
 
@@ -132,4 +132,5 @@ function showError(element) {
 
 function submitInfo() {
   //SEND DATA TOS SERVER
+  alert("Account created successfully.");
 }
