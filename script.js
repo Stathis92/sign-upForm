@@ -88,8 +88,37 @@ function checkMatchingPswd(first, last) {
 function errorHandling(element, flag) {
   if (flag == 1) {
     element.classList.add("error");
+    showError(element);
   } else {
     element.classList.remove("error");
+  }
+}
+
+function showError(element) {
+  switch (element.id) {
+    case "first_name":
+      console.log("ERROR IN FIRST NAME");
+      break;
+
+    case "last_name":
+      console.log("ERROR IN LAST NAME");
+      break;
+
+    case "user_email":
+      console.log("ERROR IN EMAIL");
+      break;
+
+    case "phone_number":
+      console.log("ERROR IN PHONE");
+      break;
+
+    case "user_password":
+      console.log("ERROR IN PASSWORD");
+      break;
+
+    case "confirm_password":
+      console.log("ERROR IN CONFIRM PASSWORD");
+      break;
   }
 }
 
