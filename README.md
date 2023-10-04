@@ -4,5 +4,7 @@ In this project we create a website and try to implement a sign up form with var
 Once the user types all info then they have to click a button to confirm their choises.
 We then check all inputs to verify they are correct and we proceed to complete the sign up.
 
-Demo(under construction):
+(Error messages appear in console)
+
+Demo:
 https://stathis92.github.io/sign-upForm
