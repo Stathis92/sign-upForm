@@ -106,7 +106,7 @@ input:focus {
 
 .error {
     transition: 0.1;
-    border: 3px solid #e25542;
+    border: 2px solid #e25542;
 }
 
 .row {
