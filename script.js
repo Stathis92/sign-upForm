@@ -45,9 +45,9 @@ function checkName(first, last) {
 function checkEmail(mail) {
   //Validate email
   //regex found in https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
-  let validRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
+  let regex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
   
-  if(mail.match(validRegex)){
+  if(mail.match(regex)){
     console.log("Valid");
   }
   else{
@@ -56,8 +56,15 @@ function checkEmail(mail) {
 }
 
 function checkPhone(phone) {
-  //TODO- idk maybe at least 9 characters???
-  console.log(phone); //TEMP
+  //Validate phone number
+  //regex found in https://www.abstractapi.com/guides/validate-phone-number-javascript
+  let regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  if(phone.match(regex)){
+    console.log("Valid");
+  }
+  else{
+    console.log("Invalid");
+  }
 }
 
 function checkPswd(first) {
