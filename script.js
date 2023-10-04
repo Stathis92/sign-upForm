@@ -8,12 +8,12 @@ function createAccount() {
 }
 
 function checkInputs() {
-  const firstName = document.getElementById("first_name").value;
-  const lastName = document.getElementById("last_name").value;
-  const email = document.getElementById("user_email").value;
-  const tel = document.getElementById("phone_number").value;
-  const usrPswd = document.getElementById("user_password").value;
-  const cnfrmPswd = document.getElementById("confirm_password").value;
+  const firstName = document.getElementById("first_name");
+  const lastName = document.getElementById("last_name");
+  const email = document.getElementById("user_email");
+  const tel = document.getElementById("phone_number");
+  const usrPswd = document.getElementById("user_password");
+  const cnfrmPswd = document.getElementById("confirm_password");
 
   checkName(firstName, lastName);
   checkEmail(email);
@@ -28,17 +28,15 @@ function checkName(first, last) {
   //Validate first and last Name
   //regex found in https://www.geeksforgeeks.org/javascript-program-to-check-if-a-string-contains-only-alphabetic-characters/
   let regex = /^[a-zA-Z]+$/;
-  if(first.match(regex)){
-    console.log("Valid");
+  if (first.value.match(regex)) {
+    errorHandling(first, 0);
+  } else {
+    errorHandling(first, 1);
   }
-  else{
-    console.log("Invalid");
-  }
-  if(last.match(regex)){
-    console.log("Valid");
-  }
-  else{
-    console.log("Invalid");
+  if (last.value.match(regex)) {
+    errorHandling(last, 0);
+  } else {
+    errorHandling(last, 1);
   }
 }
 
@@ -46,12 +44,11 @@ function checkEmail(mail) {
   //Validate email
   //regex found in https://www.simplilearn.com/tutorials/javascript-tutorial/email-validation-in-javascript
   let regex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
-  
-  if(mail.match(regex)){
-    console.log("Valid");
-  }
-  else{
-    console.log("Invalid");
+
+  if (mail.value.match(regex)) {
+    errorHandling(mail, 0);
+  } else {
+    errorHandling(mail, 1);
   }
 }
 
@@ -59,11 +56,10 @@ function checkPhone(phone) {
   //Validate phone number
   //regex found in https://www.abstractapi.com/guides/validate-phone-number-javascript
   let regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
-  if(phone.match(regex)){
-    console.log("Valid");
-  }
-  else{
-    console.log("Invalid");
+  if (phone.value.match(regex)) {
+    errorHandling(phone, 0);
+  } else {
+    errorHandling(phone, 1);
   }
 }
 
@@ -71,19 +67,30 @@ function checkPswd(first) {
   //Validate password 7-16 long / first char must be a letter
   //regex found in https://www.w3resource.com/javascript/form/password-validation.php
   let regex = /^[A-Za-z]\w{7,14}$/;
-  if(first.match(regex)){
-    console.log("Valid");
+  if (first.value.match(regex)) {
+    errorHandling(first, 0);
     return 1;
-  }
-  else{
-    console.log("Invalid");
+  } else {
+    errorHandling(first, 1);
   }
   return 0;
 }
 
 function checkMatchingPswd(first, last) {
-  if (first == last) return true;
+  if (first.value == last.value) {
+    errorHandling(last, 0);
+    return true;
+  }
+  errorHandling(last, 1);
   return false;
+}
+
+function errorHandling(element, flag) {
+  if (flag == 1) {
+    element.classList.add("error");
+  } else {
+    element.classList.remove("error");
+  }
 }
 
 function submitInfo() {
