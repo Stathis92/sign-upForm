@@ -104,6 +104,11 @@ input:focus {
     box-shadow: 0px 0px 10px 0px rgb(131, 156, 240);
 }
 
+.error {
+    transition: 0.1;
+    border: 3px solid #e25542;
+}
+
 .row {
     margin-top: 1.5vh;
     gap: 10vh;
