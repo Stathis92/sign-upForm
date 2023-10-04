@@ -2,9 +2,15 @@ const submitButton = document.querySelector(".submitBtn");
 
 submitButton.addEventListener("click", createAccount);
 
+let errorCount = 0;
+
 function createAccount() {
+  errorCount = 0;
   checkInputs();
-  submitInfo();
+  if (errorCount == 0) {
+    submitInfo();
+    alert("Account created successfully.");
+  }
 }
 
 function checkInputs() {
@@ -19,9 +25,8 @@ function checkInputs() {
   checkEmail(email);
   checkPhone(tel);
   if (checkPswd(usrPswd) == 1) {
-    console.log(checkMatchingPswd(usrPswd, cnfrmPswd)); //TEMP
+    checkMatchingPswd(usrPswd, cnfrmPswd);
   }
-  //TODO ERROR HANDLING FUNCTION
 }
 
 function checkName(first, last) {
@@ -88,36 +93,39 @@ function checkMatchingPswd(first, last) {
 function errorHandling(element, flag) {
   if (flag == 1) {
     element.classList.add("error");
+    errorCount++;
     showError(element);
   } else {
     element.classList.remove("error");
+    if (errorCount > 0)
+      errorCount--;
   }
 }
 
 function showError(element) {
   switch (element.id) {
     case "first_name":
-      console.log("ERROR IN FIRST NAME");
+      console.log("Error: First name must contain only alphabetical character!");
       break;
 
     case "last_name":
-      console.log("ERROR IN LAST NAME");
+      console.log("Error: Last name must contain only alphabetical character!");
       break;
 
     case "user_email":
-      console.log("ERROR IN EMAIL");
+      console.log("Error: Wrong email format!");
       break;
 
     case "phone_number":
-      console.log("ERROR IN PHONE");
+      console.log("Error: Wrong phone number format!");
       break;
 
     case "user_password":
-      console.log("ERROR IN PASSWORD");
+      console.log("Error: Password must start with alphabetical character and be at least seven(7) characters long!");
       break;
 
     case "confirm_password":
-      console.log("ERROR IN CONFIRM PASSWORD");
+      console.log("Error: Passwords do not match!");
       break;
   }
 }
