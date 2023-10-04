@@ -97,8 +97,6 @@ function errorHandling(element, flag) {
     showError(element);
   } else {
     element.classList.remove("error");
-    if (errorCount > 0)
-      errorCount--;
   }
 }
 
