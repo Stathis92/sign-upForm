@@ -68,9 +68,17 @@ function checkPhone(phone) {
 }
 
 function checkPswd(first) {
-  //TODO- CHECK FOR AT LEAST 6 CHARACTERS, MAYBE ADD MANDATORY NUMBER+SPECIAL CHARACTER
-  console.log(first); //TEMP
-  return 1;
+  //Validate password 7-16 long / first char must be a letter
+  //regex found in https://www.w3resource.com/javascript/form/password-validation.php
+  let regex = /^[A-Za-z]\w{7,14}$/;
+  if(first.match(regex)){
+    console.log("Valid");
+    return 1;
+  }
+  else{
+    console.log("Invalid");
+  }
+  return 0;
 }
 
 function checkMatchingPswd(first, last) {
